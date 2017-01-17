@@ -57,6 +57,7 @@
 		    // Check if empty or not
 		    if (dpval  === '' || dpval === null) {
 		        alert('Date of Booking is blank');
+		        this.event.preventDefault();
 		        return false;
 		    }
 		    else{

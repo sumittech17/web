@@ -53,7 +53,8 @@
                 </blc:product_option_display>
                 </td>
                 <td align="center" th:utext="*{quantity}"></td>
-                <td align="center" th:utext="*{START_DATE}"></td>
+  <!-- <td align="center" th:utext="*{START_DATE}"></td> -->
+            <td th:utext="${#dates.format(item.START_DATE, 'dd-MMM-yyyy')}"></td>
                 <td align="center" blc:price="*{price}"></td>
                <!--  <td align="center" th:if="*{adjustmentValue.zero}"></td> -->
                 <td align="center" class="discount" th:unless="*{adjustmentValue.zero}" >
@@ -73,7 +74,7 @@
                     <td><span th:utext="#{confirmation.orderSubTotal}">Subtotal</span></td>
                     <td blc:price="${order.subTotal}"></td>
                 </tr>
-                <tr>
+         <!--        <tr>
                     <td><span th:utext="#{confirmation.promotions}">Promotions</span></td>
                     <td class="discount" th:if="${order.orderAdjustmentsValue.zero}"></td>
                     <td class="discount" th:unless="*{order.orderAdjustmentsValue.zero}" blc:price="${order.orderAdjustmentsValue}"></td>
@@ -85,7 +86,7 @@
                 <tr>
                     <td><span th:utext="#{confirmation.shipping}">Shipping</span></td>
                     <td blc:price="${order.totalShipping}"></td>
-                </tr>
+                </tr> -->
             </table>
         </div>
 
